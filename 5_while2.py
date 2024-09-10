@@ -15,13 +15,25 @@
     
 """
 
-questions_and_answers = {}
+from datetime import datetime
+
+questions_and_answers = {'Как дела': 'Хорошо!', 
+                         'Что делаешь?': 'Программирую', 
+                         'Какое сегодня число и точное время?': datetime.now(), 
+                         'Где мой планшет?': 'Не знаю.'
+                         }
 
 def ask_user(answers_dict):
     """
     Замените pass на ваш код
     """
-    pass
+    while True:
+        user_input = input('Пользователь: ')
+        for quest, answer in questions_and_answers.items():
+            if quest == user_input: 
+                print(f'Программа: {answer}')      
+        break
+        
     
 if __name__ == "__main__":
     ask_user(questions_and_answers)
