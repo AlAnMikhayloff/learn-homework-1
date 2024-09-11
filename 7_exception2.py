@@ -12,30 +12,36 @@
   ValueError и TypeError, если приведение типов не сработало.
     
 """
+try:
+    def discounted(price, discount, max_discount=20):
+        """
+        Замените pass на ваш код
+        """
 
-def discounted(price, discount, max_discount=20):
-    """
-    Замените pass на ваш код
-    """
-
-    try:
-        price = float(price)
-        discount = float(discount)
-        max_discount = int(max_discount)
-    except (ValueError, TypeError) as e:
-        print('Ошибка данных!')
-    if max_discount >= 100:
-        raise ValueError("Максимальная скидка не должна быть больше 100")
-    if discount >= max_discount:
-        price_with_discount = price
-    else:
-        price_with_discount = price - (price * discount / 100)
-    return price_with_discount
-
-if __name__ == "__main__":
-    print(discounted(100, 2))
-    print(discounted(100, "3"))
-    print(discounted("100", "4.5"))
-    print(discounted("five", 5))
-    print(discounted("сто", "десять"))
-    print(discounted(100.0, 5, "10"))
+        try:
+            price = float(price)
+            discount = float(discount)
+            max_discount = int(max_discount)
+        except (ValueError, TypeError, UnboundLocalError):
+            print("Ошибка типа данных! Введите корректные данные: ")
+        else:
+            if max_discount >= 100:
+                price_with_discount = price
+                raise ValueError("Максимальная скидка не должна быть больше 100")
+            if discount >= max_discount:
+                price_with_discount = price
+            else:
+                price_with_discount = price - (price * discount / 100)
+        finally:
+            return price_with_discount
+    if __name__ == "__main__":
+        print(discounted(100, 2))
+        print(discounted(100.0, 5, "125"))
+        print(discounted(100, "3"))
+        print(discounted("100", "4.5"))
+        print(discounted(100.0, 5, "10"))
+        print(discounted(100.0, 6, "19"))
+        print(discounted("сто", "десять"))
+        print(discounted("five", 5))
+except:
+    print('Введите корректные данные!')
