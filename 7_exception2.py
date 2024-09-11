@@ -22,7 +22,7 @@ try:
             price = float(price)
             discount = float(discount)
             max_discount = int(max_discount)
-        except (ValueError, TypeError, UnboundLocalError):
+        except (ValueError, TypeError):
             print("Ошибка типа данных! Введите корректные данные: ")
         else:
             if max_discount >= 100:
@@ -43,5 +43,5 @@ try:
         print(discounted(100.0, 6, "19"))
         print(discounted("сто", "десять"))
         print(discounted("five", 5))
-except:
-    print('Введите корректные данные!')
+except UnboundLocalError:
+    print('Введите корректные данные, лучше цифрами, буквами не надо!')
