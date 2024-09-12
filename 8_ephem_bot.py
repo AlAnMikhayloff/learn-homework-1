@@ -13,7 +13,7 @@
 
 """
 import logging
-
+import ephem
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
