@@ -33,7 +33,8 @@ try:
             else:
                 price_with_discount = price - (price * discount / 100)
         finally:
-            return price_with_discount
+            
+            
     if __name__ == "__main__":
         print(discounted(100, 2))
         print(discounted(100.0, 5, "125"))
