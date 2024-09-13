@@ -23,11 +23,11 @@ def main():
     def lines(line_one, line_two):
         if type(line_one) != str or type(line_two) != str:
             print(0)
-        if line_one == line_two:
+        elif line_one == line_two:
             print(1)
-        if len(str(line_one)) > len(str(line_two)):
+        elif len(str(line_one)) > len(str(line_two)):
             print(2)
-        if line_one != line_two and line_two == 'learn':
+        elif line_one != line_two and line_two == 'learn':
             print(3)
         else:
             print('А вторая-то строка длиннее!')
