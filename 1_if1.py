@@ -25,7 +25,7 @@ def main():
         activity_user = "Do you really go to kindergarten?"
     if 7 < age_user <= 18:
         activity_user = "Wow! You're going to school!"
-    if 18 < age_user <= 24:
+    if 19 < age_user <= 24:
         activity_user = "Wow! You're going to college!"
     else:
         activity_user = "I hope you're not unemployed?"
