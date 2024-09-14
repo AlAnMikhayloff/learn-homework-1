@@ -29,7 +29,9 @@ def ask_user(answers_dict):
     """
     
     while True:
+        
         user_input = input('Пользователь: ')
+        
         if questions_and_answers.get(user_input) == None:
             print(f'Программа: Не понимаю вопроса, перезвони.')
             break   
