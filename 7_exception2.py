@@ -24,7 +24,7 @@ def discounted(price, discount, max_discount=20):
         max_discount = int(max_discount)
     except (ValueError, TypeError):
         print("Ошибка типа данных! Введите корректные данные: ")
-        return price_with_discount
+        
     else:
         if max_discount >= 100:
             price_with_discount = price
@@ -33,10 +33,11 @@ def discounted(price, discount, max_discount=20):
             price_with_discount = price
         else:
             price_with_discount = price - (price * discount / 100)
-
+        return price_with_discount
+        
 if __name__ == "__main__":
     print(discounted(100, 2))
-    print(discounted(100.0, 5, "125"))
+    print(discounted(100.0, 75, "199"))
     print(discounted(100, "3"))
     print(discounted("100", "4.5"))
     print(discounted(100.0, 5, "10"))
@@ -44,4 +45,4 @@ if __name__ == "__main__":
     print(discounted("сто", "десять"))
     print(discounted("five", 5))
 
-print('Введите корректные данные, лучше цифрами, буквами не надо!')
+
