@@ -37,7 +37,7 @@ def discounted(price, discount, max_discount=20):
         
 if __name__ == "__main__":
     print(discounted(100, 2))
-    print(discounted(100.0, 75, "199"))
+    print(discounted(100.0, 75, "50"))
     print(discounted(100, "3"))
     print(discounted("100", "4.5"))
     print(discounted(100.0, 5, "10"))
