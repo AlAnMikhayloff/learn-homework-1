@@ -27,13 +27,15 @@ def ask_user(answers_dict):
     """
     Замените pass на ваш код
     """
+    
     while True:
         user_input = input('Пользователь: ')
-        for quest, answer in questions_and_answers.items():
-            if quest == user_input: 
-                print(f'Программа: {answer}')      
-        break
-        
+        if questions_and_answers.get(user_input) == None:
+            print(f'Программа: Не понимаю вопроса, перезвони.')
+            break   
+        else:
+            print(f'Программа: {questions_and_answers.get(user_input)}')
+             
     
 if __name__ == "__main__":
     ask_user(questions_and_answers)
